@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specifity By Sebastian Ibanez</title>
+    <link href="styles.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Specificity In HTML & CSS</h1>
+        <h2>by Sebastian Ibanez</h2>
+        <h3>09/05/2021</h3>
+        <p>An important part of creating websites is effectly manage the values of the rules on CSS selectors. This is commonly know as Specificity </p>
+        <h4>an article based on this <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity" target="_blank">article. </a></h4>
+    </header>
+  <div class="definition"></div>
+		<h2>How is specificity calculated?</h2>
+        <p>Specificity is a weight that is applied to a given CSS declaration, determined by the number of each 
+            <id class="important-word">selector type</id>in the matching selector. When multiple declarations have equal specificity, the last declaration found in the CSS is applied to the element. Specificity only applies when the same element is targeted by multiple declarations. As per CSS rules, <id class="important-word"></id> directly targeted elements will always take precedence over rules which an element inherits from its ancestor.</p>
+		<p><id class="Note">Note: Proximity of elements in the document tree has no effect on the specificity.</id></p>
+  </div>
+  <div class="types">  
+        <h2>Selector Types</h2>
+        <p>The following list of selector types increases by specificity:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>selector</th>   
+                    <th>description</th>
+                    <th>Specifity</th>                     
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><h2><id class="important-word">1. Type selectors</id></h2></td>
+                    <td>(e.g., h1) and pseudo-elements (e.g., ::before).</td>
+                    <td>Low</td>
+                </tr>
+                <tr>
+                    <td><h2><id class="important-word">2. Class selectors</id></h2></td>
+                    <td>(e.g., .example), attributes selectors (e.g., [type="radio"]) and pseudo-classes (e.g., :hover).</td>
+                    <td>Normal</td>
+                </tr>
+                <tr>
+                    <td><h2><id class="important-word">ID selectors </id></h2></td>
+                    <td>(e.g., #example).</td>
+                    <td>High</td>
+                </tr>
+
+            </tbody>
+        </table>
+  </div>
+  <div class="symbols">
+    <p>Universal selector (<id class="sign">*</id>), combinators (<id class="sign">+, >, ~, ' ', ||</id>) and negation pseudo-class (<id class="sign">:not()</id>) have no effect on specificity (The selectors declared inside(<id class="sign">:not()</id>) do, however.) For more information, visit: <id class="important-word">"Specificity" in "Cascade and inheritance"</id>, you can also visit this <a href="https://specifishity.com" target="_blank">article.</a> Inline styles added to an element (e.g., <id class="sign">style="font-weight: bold;"</id>) always overwrite any styles in external stylesheets, and thus can be thought of as having the highest specificity.</p>
+  </div>
+  <div class="!important-exception">
+      <h2>The !important exception</h2>
+      <p>When an important rule is used on a style declaration, this declaration overrides any other declarations. Although technically !important has nothing to do with specificity, it interacts directly with it. Using !important, however, is bad practice and should be avoided because it makes debugging more difficult by breaking the natural cascading in your stylesheets. When two conflicting declarations with the !important rule are applied to the same element, the declaration with a greater specificity will be applied.</p>
+      <h3>Some rules of thumb:</h3>
+        <ul>
+            <li><id class="important-word">Always</id> look for a way to use specificity before even considering <id class="sign">!important</id></li>
+            <li><id class="important-word">Only</id> use <id class="sign">!important</id> on page-specific CSS that overrides foreign CSS (from external libraries, like Bootstrap or normalize.css).</li>
+            <li><id class="important-word">Never</id> use <id class="sign">!important</id> when you're writing a plugin/mashup.</li>
+            <li><id class="important-word">Never</id> use <id class="sign">!important</id> on site-wide CSS.</li>
+        </ul>
+    </div>
+</body>
+    <footer>
+        <h3>My social media channels</h3>
+        <h3>Feedback</h3>
+        <h3>About</h3>
+    </footer>
+</html>
